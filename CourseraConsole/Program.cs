@@ -7,33 +7,6 @@ namespace CourseraConsole
 {
     class Program
     {
-        static string ReverseComplement(string pattern)
-        {
-            char[] array = new char[pattern.Length];
-            for (int i = 0; i < pattern.Length; i++)
-            {
-                switch (pattern[i])
-                {
-                    case 'A':
-                        array[i] = 'T';
-                        break;
-                    case 'C':
-                        array[i] = 'G';
-                        break;
-                    case 'G':
-                        array[i] = 'C';
-                        break;
-                    case 'T':
-                        array[i] = 'A';
-                        break;
-                    default:
-                        break;
-                }
-            }
-
-            return new string(array.Reverse().ToArray());
-        }
-
         static int PatternCount(string text, string pattern)
         {
             int count = 0;
@@ -125,12 +98,22 @@ namespace CourseraConsole
             //    Console.WriteLine(res);
             //}
 
+            //PatternIdentifier identifier = new PatternIdentifier();
+            //var results = identifier.FrequentWordsWithMismatches("GAGTCCGAGGAGATAACCTCCATAACCTCCGAGATAGAGGCGTGAGGCGTTCCTCCTCCGAGATAATAACCTCCATAGAGACCACCACCATATCCGCGTGCGTGAGGCGTACCTCCGAGGCGTGAGGAGGCGTATAACCACCACCACCTCCGCGTGAGTCCTCCATAATAGAGTCCTCCATATCCTCCGCGTGAGGAGTCCACCATATCCTCCACCGAGATAACCACCTCCATAATAATAATATCCATAGAGACCTCCTCCGAGGCGTACCATAGCGTGAGTCCGAGATAGAGGAGATAGAGTCCACCATAGAGATATCCGAGGAGGCGTGCGTTCCATAACCTCCTCCGAGGAGGCGTTCCTCCACCGCGTTCCGCGT", 7, 3);
+            //foreach (var res in results)
+            //{
+            //    Console.WriteLine(res);
+            //}
+
+            string pattern = "GAGACACAGAACCCGTCACCCGTCTCACCCAGACACACGACCCGCATCCATCCAGATCCGCGCACGCGTCCACGGAACCGACAGAGAGATCCGCACGTCCGACCCGGACACAGACATCGACGACCTCCGACCGAGAGAGAGAGACGACCACCCGTCACCCAGATCACCCGTCCGACCGAACCCGTCGAGAGACGTCCATCCAACCTCACCACCACC";
             PatternIdentifier identifier = new PatternIdentifier();
-            var results = identifier.FrequentWordsWithMismatches("GAGTCCGAGGAGATAACCTCCATAACCTCCGAGATAGAGGCGTGAGGCGTTCCTCCTCCGAGATAATAACCTCCATAGAGACCACCACCATATCCGCGTGCGTGAGGCGTACCTCCGAGGCGTGAGGAGGCGTATAACCACCACCACCTCCGCGTGAGTCCTCCATAATAGAGTCCTCCATATCCTCCGCGTGAGGAGTCCACCATATCCTCCACCGAGATAACCACCTCCATAATAATAATATCCATAGAGACCTCCTCCGAGGCGTACCATAGCGTGAGTCCGAGATAGAGGAGATAGAGTCCACCATAGAGATATCCGAGGAGGCGTGCGTTCCATAACCTCCTCCGAGGAGGCGTTCCTCCACCGCGTTCCGCGT", 7, 3);
-            foreach (var res in results)
+            var results1 = identifier.FrequentWordsWithMismatches(pattern, 7, 3);
+            
+            foreach (var res in results1)
             {
                 Console.WriteLine(res);
             }
+
 
             Console.ReadKey();
         }

@@ -52,6 +52,7 @@
     <Compile Include="PatternIdentifier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReverseComplement.cs" />
     <Compile Include="SkewFinder.cs" />
   </ItemGroup>
   <ItemGroup>
