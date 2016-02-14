@@ -1,0 +1,6 @@
+c:\users\sblair\documents\visual studio 2015\Projects\Coursera\CourseraConsole\bin\Debug\CourseraConsole.exe.config
+c:\users\sblair\documents\visual studio 2015\Projects\Coursera\CourseraConsole\bin\Debug\CourseraConsole.exe
+c:\users\sblair\documents\visual studio 2015\Projects\Coursera\CourseraConsole\bin\Debug\CourseraConsole.pdb
+c:\users\sblair\documents\visual studio 2015\Projects\Coursera\CourseraConsole\obj\Debug\CourseraConsole.csprojResolveAssemblyReference.cache
+c:\users\sblair\documents\visual studio 2015\Projects\Coursera\CourseraConsole\obj\Debug\CourseraConsole.exe
+c:\users\sblair\documents\visual studio 2015\Projects\Coursera\CourseraConsole\obj\Debug\CourseraConsole.pdb
