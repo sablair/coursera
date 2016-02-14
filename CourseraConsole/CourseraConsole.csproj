@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ClumpFinder.cs" />
     <Compile Include="FrequencyCalculator.cs" />
+    <Compile Include="HammingDistanceCalculator.cs" />
     <Compile Include="PatternConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
