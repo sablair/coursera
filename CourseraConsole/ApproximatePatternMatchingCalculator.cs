@@ -22,5 +22,19 @@ namespace CourseraConsole
             }
             return values;
         }
+
+        public int ApproximateCount(string pattern, string text, int mismatches)
+        {
+            int count = 0;
+            for (int index = 0; index <= text.Length - pattern.Length; index++)
+            {
+                if (_hdc.CalculateDistance(pattern, text.Substring(index, pattern.Length)) <= mismatches)
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
     }
 }
