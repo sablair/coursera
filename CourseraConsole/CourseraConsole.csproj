@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApproximatePatternMatchingCalculator.cs" />
     <Compile Include="ClumpFinder.cs" />
     <Compile Include="FrequencyCalculator.cs" />
     <Compile Include="HammingDistanceCalculator.cs" />
