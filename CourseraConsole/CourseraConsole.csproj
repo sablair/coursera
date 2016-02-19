@@ -47,6 +47,7 @@
     <Compile Include="ClumpFinder.cs" />
     <Compile Include="FrequencyCalculator.cs" />
     <Compile Include="HammingDistanceCalculator.cs" />
+    <Compile Include="MotifProblem.cs" />
     <Compile Include="NeighborhoodGenerator.cs" />
     <Compile Include="PatternConverter.cs" />
     <Compile Include="PatternIdentifier.cs" />

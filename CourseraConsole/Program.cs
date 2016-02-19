@@ -114,29 +114,37 @@ namespace CourseraConsole
             //    Console.WriteLine(res);
             //}
 
-            //Question 2
-            HammingDistanceCalculator _calculator = new HammingDistanceCalculator();
-            int hammingDist = _calculator.CalculateDistance("TGACCCGTTATGCTCGAGTTCGGTCAGAGCGTCATTGCGAGTAGTCGTTTGCTTTCTCAAACTCC", "GAGCGATTAAGCGTGACAGCCCCAGGGAACCCACAAAACGTGATCGCAGTCCATCCGATCATACA");
-            Console.WriteLine("Question 2: {0}", hammingDist);
+            ////Question 2
+            //HammingDistanceCalculator _calculator = new HammingDistanceCalculator();
+            //int hammingDist = _calculator.CalculateDistance("TGACCCGTTATGCTCGAGTTCGGTCAGAGCGTCATTGCGAGTAGTCGTTTGCTTTCTCAAACTCC", "GAGCGATTAAGCGTGACAGCCCCAGGGAACCCACAAAACGTGATCGCAGTCCATCCGATCATACA");
+            //Console.WriteLine("Question 2: {0}", hammingDist);
 
-            //Question 3
-            SkewFinder _finder = new SkewFinder();
-            var skews = _finder.GetMinimumSkewPoints("GATACACTTCCCGAGTAGGTACTG");
-            Console.WriteLine("Question 3:");
-            foreach (var index in skews)
+            ////Question 3
+            //SkewFinder _finder = new SkewFinder();
+            //var skews = _finder.GetMinimumSkewPoints("GATACACTTCCCGAGTAGGTACTG");
+            //Console.WriteLine("Question 3:");
+            //foreach (var index in skews)
+            //{
+            //    Console.WriteLine("Values : {0}", index);
+            //}
+
+            ////Question 4
+            //ApproximatePatternMatchingCalculator apc = new ApproximatePatternMatchingCalculator();
+            //int acount = apc.ApproximateCount("CCC", "CATGCCATTCGCATTGTCCCAGTGA", 2);
+            //Console.WriteLine("Question 4: {0}", acount);
+
+            ////Question 5
+            //PatternIdentifier id = new PatternIdentifier();
+            //acount = id.FrequentWordsWithMismatches("ACGT", 4, 3).Count();
+            //Console.WriteLine("Question 5: {0}", acount);
+
+            MotifProblem mp = new MotifProblem();
+            var results = mp.MotifEnumeration(new string[] { "TTGTATATCAGCACAATCTTCTTAC", "TAGCAGTTTGCGCGAGCACCCCGGT", "CGAGAGCACAAAGCGATTTGTCAAA", "GCCAACGCATGCACGGGATAATGTC", "GCACAACGAAGTGCCCCGTAAAAGA", "CAGTCCCAACATACTTGATGGCACA" }, 5, 1);
+
+            foreach (var res in results)
             {
-                Console.WriteLine("Values : {0}", index);
+                Console.WriteLine(res);
             }
-
-            //Question 4
-            ApproximatePatternMatchingCalculator apc = new ApproximatePatternMatchingCalculator();
-            int acount = apc.ApproximateCount("CCC", "CATGCCATTCGCATTGTCCCAGTGA", 2);
-            Console.WriteLine("Question 4: {0}", acount);
-
-            //Question 5
-            PatternIdentifier id = new PatternIdentifier();
-            acount = id.FrequentWordsWithMismatches("ACGT", 4, 3).Count();
-            Console.WriteLine("Question 5: {0}", acount);
 
             Console.ReadKey();
         }

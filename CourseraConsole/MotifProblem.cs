@@ -8,39 +8,52 @@ namespace CourseraConsole
         private NeighborhoodGenerator _neighborhoodGenerator;
         private ApproximatePatternMatchingCalculator _approximatePatternMatchingCalculator;
 
-        public IEnumerable<string> MotifEnumeration(IEnumerable<string> dna, int k, int d)
+        public IEnumerable<string> MotifEnumeration(IEnumerable<string> dnaSequences, int k, int d)
         {
             _neighborhoodGenerator = new NeighborhoodGenerator();
             _approximatePatternMatchingCalculator = new ApproximatePatternMatchingCalculator();
-            HashSet<string> result = new HashSet<string>();
+            var kmerHash = ExtractKmers(dnaSequences, k);
+            var kmerArray = kmerHash.ToArray();
+            var results = new HashSet<string>();
 
-            foreach (var sequence in dna)
+            foreach (var kmer in kmerArray)
             {
-                foreach (var kmer in ExtractKmers(sequence, k).ToArray())
+                IEnumerable<string> neighbors = _neighborhoodGenerator.Neighbors(kmer, d);
+                foreach (var n in neighbors)
                 {
-                    IEnumerable<string> neighbors = _neighborhoodGenerator.Neighbors(kmer, d);
-                    foreach (var n in neighbors)
-                    {
-                        if (_approximatePatternMatchingCalculator.ApproximateCount(n, sequence, d) > 0)
-                        {
-                            result.Add(n);
-                        }
-                    }
+                    kmerHash.Add(n);
                 }
             }
-            
-            var patterns = new List<string>();
+                        
+            foreach (var kmer in kmerArray)
+            {
+                int count = 0;
+                foreach (var sequence in dnaSequences)
+                {
+                    if (_approximatePatternMatchingCalculator.ApproximateCount(kmer, sequence, d) > 0)
+                    {                        
+                        count++;
+                    }
+                }
 
+                if (count == dnaSequences.Count())
+                {
+                    results.Add(kmer);
+                }
+            }           
 
-            return patterns;
+            return results.ToArray();
         }
 
-        private HashSet<string> ExtractKmers(string dna, int k)
+        private HashSet<string> ExtractKmers(IEnumerable<string> dna, int k)
         {
             var result = new HashSet<string>();
-            for (int index = 0; index <= dna.Length - k; index++)
+            foreach (var sequence in dna)
             {
-                result.Add(dna.Substring(index, k));
+                for (int index = 0; index <= sequence.Length - k; index++)
+                {
+                    result.Add(sequence.Substring(index, k));
+                }
             }
 
             return result;
