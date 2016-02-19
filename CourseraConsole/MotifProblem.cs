@@ -7,6 +7,7 @@ namespace CourseraConsole
     {
         private NeighborhoodGenerator _neighborhoodGenerator;
         private ApproximatePatternMatchingCalculator _approximatePatternMatchingCalculator;
+        private HammingDistanceCalculator _hammingDistanceCalculator;
 
         public IEnumerable<string> MotifEnumeration(IEnumerable<string> dnaSequences, int k, int d)
         {
@@ -57,6 +58,36 @@ namespace CourseraConsole
             }
 
             return result;
+        }
+
+        //public string MedianString(string dna, int k)
+        //{
+        //    int distance = int.MaxValue;
+
+        //}
+
+        public int DistanceBetweenPatternAndStrings(string pattern, IEnumerable<string> dna)
+        {
+            _hammingDistanceCalculator = new HammingDistanceCalculator();
+            int k = pattern.Length;
+            int distance = 0;
+
+            foreach (var text in dna)
+            {
+                int hammingDistance = int.MaxValue;
+                int dist = 0;
+                for (int index = 0; index <= text.Length - k; index++)
+                {
+                    dist = _hammingDistanceCalculator.CalculateDistance(pattern, text.Substring(index, k));
+                    if (hammingDistance > dist)
+                    {
+                        hammingDistance = dist;
+                    }
+                }
+                distance += hammingDistance;
+            }
+
+            return distance;
         }
     }
 }
