@@ -60,11 +60,34 @@ namespace CourseraConsole
             return result;
         }
 
-        //public string MedianString(string dna, int k)
-        //{
-        //    int distance = int.MaxValue;
+        public string MedianString(IEnumerable<string> dna, int k)
+        {
+            _neighborhoodGenerator = new NeighborhoodGenerator();
+            string median = string.Empty;
+            int distance = int.MaxValue;
+            var combinations = new List<string>();
 
-        //}
+            string As = new string('A', k);
+            combinations.AddRange(_neighborhoodGenerator.Neighbors(As, 4));
+            string Cs = new string('C', k);
+            combinations.AddRange(_neighborhoodGenerator.Neighbors(Cs, 4));
+            string Gs = new string('G', k);
+            combinations.AddRange(_neighborhoodGenerator.Neighbors(Gs, 4));
+            string Ts = new string('T', k);
+            combinations.AddRange(_neighborhoodGenerator.Neighbors(Ts, 4));
+
+            foreach (var kmer in combinations)
+            {
+                var calculatedDistance = DistanceBetweenPatternAndStrings(kmer, dna);
+                if (distance > calculatedDistance)
+                {
+                    distance = calculatedDistance;
+                    median = kmer;
+                }
+            }
+
+            return median;
+        }
 
         public int DistanceBetweenPatternAndStrings(string pattern, IEnumerable<string> dna)
         {
