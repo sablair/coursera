@@ -25,7 +25,8 @@ namespace CourseraConsole
                     kmerHash.Add(n);
                 }
             }
-                        
+
+            kmerArray = kmerHash.ToArray();
             foreach (var kmer in kmerArray)
             {
                 int count = 0;
