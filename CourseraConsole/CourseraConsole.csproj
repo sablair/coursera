@@ -51,6 +51,7 @@
     <Compile Include="NeighborhoodGenerator.cs" />
     <Compile Include="PatternConverter.cs" />
     <Compile Include="PatternIdentifier.cs" />
+    <Compile Include="ProfileMostProbableKmerProblem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReverseComplement.cs" />

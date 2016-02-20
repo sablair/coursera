@@ -20,7 +20,7 @@ namespace CourseraConsole
             return prefixPattern + symbol;
         }
 
-        private string NumberToSymbol(long index)
+        public string NumberToSymbol(long index)
         {
             switch (index)
             {
@@ -50,7 +50,7 @@ namespace CourseraConsole
             return 4 * PatternToNumber(prefix) + SymbolToNumber(symbol);
         }
 
-        private int SymbolToNumber(char symbol)
+        public int SymbolToNumber(char symbol)
         {
             switch (symbol)
             {
