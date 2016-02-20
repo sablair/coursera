@@ -68,13 +68,13 @@ namespace CourseraConsole
             var combinations = new List<string>();
 
             string As = new string('A', k);
-            combinations.AddRange(_neighborhoodGenerator.Neighbors(As, 4));
+            combinations.AddRange(_neighborhoodGenerator.Neighbors(As, k - 1));
             string Cs = new string('C', k);
-            combinations.AddRange(_neighborhoodGenerator.Neighbors(Cs, 4));
+            combinations.AddRange(_neighborhoodGenerator.Neighbors(Cs, k - 1));
             string Gs = new string('G', k);
-            combinations.AddRange(_neighborhoodGenerator.Neighbors(Gs, 4));
+            combinations.AddRange(_neighborhoodGenerator.Neighbors(Gs, k - 1));
             string Ts = new string('T', k);
-            combinations.AddRange(_neighborhoodGenerator.Neighbors(Ts, 4));
+            combinations.AddRange(_neighborhoodGenerator.Neighbors(Ts, k - 1));
 
             foreach (var kmer in combinations)
             {
