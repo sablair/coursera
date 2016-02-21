@@ -113,5 +113,48 @@ namespace CourseraConsole
 
             return distance;
         }
+
+        //public IEnumerable<string> GreedyMotifSearch(int k, int t, IEnumerable<string> dna)
+        //{
+        //    char[][] bestMotifs = new char[t][];
+        //    var index = 0;
+        //    foreach (var sequence in dna)
+        //    {
+        //        bestMotifs[index] = sequence.Substring(0, k).ToCharArray();
+        //        index++;
+        //    }
+        //    string firstSeq = dna.First();
+        //    for (int columnIndex = 0; columnIndex < firstSeq.Length - k; columnIndex++)
+        //    {
+        //        char[][] motifs = new char[t][];
+        //        motifs[0] = firstSeq.Substring(columnIndex, k).ToCharArray();
+        //        for (int rowIndex = 1; rowIndex < t; rowIndex++)
+        //        {
+        //            double[,] profile = CreateProfileFromMotifs();
+        //        }
+        //    }
+
+        //    return new List<string>();
+        //}
+
+        public IEnumerable<string> GreedyMotifSearch(IEnumerable<string> dna, int k, int t)
+        {
+            string firstString = dna.First();
+            var dnaList = new List<string>(dna);
+            List<double[]> profiles = new List<double[]>();
+            for (int charIndex = 0; charIndex < firstString.Length - k; charIndex++)
+            {
+                char[] firstMotif = firstString.Substring(charIndex, k).ToCharArray();
+                pr
+                for (int rowIndex = 1; rowIndex < t; rowIndex++)
+                {
+                    double[] profile = 
+                    char[] currentMotif = dnaList[rowIndex].Substring(charIndex, k).ToCharArray();
+
+                }
+            }
+
+            return new List<string>();
+        }
     }
 }
